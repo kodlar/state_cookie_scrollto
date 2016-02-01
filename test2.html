@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <script type="text/javascript" src="http://mtestnew.canliskor.com.tr/Assets/js/jquery-1.11.3.min.js"></script>
+        <title>test 2</title>
+    </head>
+    <body onload="checkCookie();">
+        <a href="" id="geri">Geri</a>
+        <script type="text/javascript">
+       
+            function getCookie(cname) {
+                var name = cname + "=";
+                var ca = document.cookie.split(';');
+                for (var i = 0; i < ca.length; i++) {
+                    var c = ca[i];
+                    while (c.charAt(0) == ' ') c = c.substring(1);
+                    if (c.indexOf(name) == 0) {
+                        return c.substring(name.length, c.length);
+                                              }
+                                                    }
+                return "";
+                                      }
+        
+            function checkCookie() {
+                var userlink = getCookie("userClickState");               
+                if (userlink != "")
+                {
+                    $('#geri').attr("href", userlink);
+                } 
+            }
+        </script>
+    </body>
+</html>
